@@ -1,0 +1,7 @@
+Test-NetConnection 192.168.1.88 -Port 8080
+
+typeperf "\Procesador(_Total)\% de tiempo de procesador" -si 5 -o C:\teastore_results_B\bcpu_capacity_30u_run3.csv
+
+jmeter.bat -n -t teastore_browse_nogui.jmx -Jhostname=192.168.1.88 -Jport=8080 -JnumUser=N -JrampUp=N -Jduration=D -Jjmeter.save.saveservice.subresults=false -l C:\teastore_results_B\NAME.jtl -e -o C:\teastore_results_B\report_NAME
+
+jmeter.bat -n -t teastore_browse_nogui.jmx -Jhostname=192.168.1.88 -Jport=8080 -JnumUser=30 -JrampUp=30 -Jduration=300 -Jjmeter.save.saveservice.subresults=false -l C:\teastore_results_B\capacity_30u_run3.jtl -e -o C:\teastore_results_B\report_capacity_30u_run3
